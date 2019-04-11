@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CategoriasModule } from './categorias/categorias.module';
 import { CoreModule } from './core/core.module';
+import { CategoriaService } from './categorias/categoria.service';
 
 
 
@@ -16,7 +17,8 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    CategoriasModule
+    CategoriasModule,
+    CategoriaService
 
   ],
   providers: [],

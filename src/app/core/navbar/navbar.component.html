@@ -2,11 +2,11 @@
    <div class="container">
        <div class="ui-g">
            <div class="ui-g-12">
-               <a href="#" class="navbar-toggle"><i class="pi pi-bars"></i></a>
+               <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu=!exibindoMenu"><i class="pi pi-bars"></i></a>
            </div>
        </div>
    </div> 
-   <ul class="navbar-menu">
+   <ul class="navbar-menu" [hidden]="!exibindoMenu">
        <li class="navbar-usuario">Vitória</li>
        <li class="navbar-menuitem"><a href="#">categorias</a></li>
        <li class="navbar-menuitem"><a href="#">Produtos</a></li>

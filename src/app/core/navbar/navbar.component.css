@@ -9,7 +9,7 @@
     position:fixed;
     top: 0;
     bottom:0;
-    right: 0;
+    left: 0;
     width: 210px;
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@
     padding: 15px;
 }
 .navbar-menuitem a{
-     color: #c0bbb7;
+     color: #000000;
      text-decoration: none;
 }
 .navbar-menuitem a:hover{
