@@ -17,7 +17,7 @@
  </div>
  <div class="ui-g">
 <div class="ui-g-12">
-  <p-table [value]="categorias" [responsive]="true">
+  <p-table [value]="categorias"[rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros" [paginator]="true" [responsive]="true">
       <ng-template pTemplate="header">
           <tr>
               <th class="col-id-header">#</th>
