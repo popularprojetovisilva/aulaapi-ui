@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{LazyLoadEvent} from 'primeng/components/common/api';
 import { CategoriaFiltro, CategoriaService } from '../categoria.service';
 
 @Component({
@@ -26,5 +27,9 @@ export class CategoriasPesquisaComponent implements OnInit {
       this.totalRegistros = resultado.total;
       this.categorias = resultado.categorias;
     });
+  }
+  aoMudarPagina(event: LazyLoadEvent){
+    const pagina = event.first/event.rows;
+    this.pesquisar(pagina);
   }
 }

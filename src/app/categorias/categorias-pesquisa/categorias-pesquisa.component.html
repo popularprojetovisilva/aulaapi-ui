@@ -1,12 +1,12 @@
 <div class="container">
     <div class="ui-g">
-      <form autocomplte="off">
+      <form autocomplte="off" (ngSubmit)="pesquisar()">
       <div class="ui-g-12">
         <h1> Categorias</h1>
       </div>
      <div class="ui-g-12 ui-fluid">
        <label>Nome da cetegoria</label>
-       <input pInputText type="text">
+       <input pInputText type="text" name="nome" [(ngModel)]="filtro.nome">
      </div>
     <div class="ui-g-12">
       <button  pButton type="submit" label="pesquisar"></button>
@@ -17,7 +17,13 @@
  </div>
  <div class="ui-g">
 <div class="ui-g-12">
-  <p-table [value]="categorias"[rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros" [paginator]="true" [responsive]="true">
+  <p-table [value]="categorias"
+           [rows]="filtro.itensPorPagina" 
+           [totalRecords]="totalRegistros" 
+           [paginator]="true"
+           [lazy]="true"
+            [responsive]="true" (onLazyLoad)="aoMudarPagina($event)"
+            >
       <ng-template pTemplate="header">
           <tr>
               <th class="col-id-header">#</th>
