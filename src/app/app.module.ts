@@ -7,6 +7,8 @@ import { CategoriasModule } from './categorias/categorias.module';
 import { CoreModule } from './core/core.module';
 import { CategoriaService } from './categorias/categoria.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProdutosModule } from './produtos/produtos.module';
+import { ProdutoService } from './produtos/produto.service';
 
 
 
@@ -20,11 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     CoreModule,
     CategoriasModule,
+    ProdutosModule
    
 
 
   ],
-  providers: [CategoriaService],
+  providers: [CategoriaService, ProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

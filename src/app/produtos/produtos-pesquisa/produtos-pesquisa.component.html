@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="ui-g">
+    <form autocomplte="off" (ngSubmit)="pesquisar()">
+    <div class="ui-g-12">
+      <h1> Produtos</h1>
+    </div>
+   <div class="ui-g-12 ui-fluid">
+     <label>Nome dos Produtos</label>
+     <input pInputText type="text" name="nome" [(ngModel)]="filtro.nome">
+   </div>
+  <div class="ui-g-12">
+    <button  pButton type="submit" label="pesquisar"></button>
+  
+   </div>
+ </form>
+ 
+</div>
+<div class="ui-g">
+<div class="ui-g-12">
+<p-table [value]="produtos"
+         [rows]="filtro.itensPorPagina" 
+         [totalRecords]="totalRegistros" 
+         [paginator]="true"
+         [lazy]="true"
+          [responsive]="true" (onLazyLoad)="aoMudarPagina($event)"
+          >
+    <ng-template pTemplate="header">
+        <tr>
+            <th class="col-id-header">#</th>
+            <th >Nome do Produto</th>
+            <th >preço  </th>
+            <th class="col-acoes-header"></th>    
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-prod >
+        <tr>
+            <td class="col-id">{{prod.id}}</td>
+            <td >{{prod.nome}}</td>
+            <td >{{prod.preco}}</td>
+            <td class="col-acoes">
+              <button pButton icon="pi pi-pencil" pTooltip="Editar"tooltipPosition="top"></button>
+              <button pButton icon="pi pi-trash" pTooltip="excluir"tooltipPosition="top"></button>
+            </td>
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+   <tr>
+     <td colspan="3">
+       Nenhum produto encontrada.
+     </td>
+   </tr>
+    </ng-template>
+</p-table>
+
+</div>
+</div>
+</div>

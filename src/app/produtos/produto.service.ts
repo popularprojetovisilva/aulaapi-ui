@@ -1,23 +1,20 @@
-import {HttpClient, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import{HttpClient, HttpParams}from '@angular/common/http';
 
-export class CategoriaFiltro{
+export class ProdutoFiltro{
   nome: string;
   pagina= 0;
   itensPorPagina= 2;
 
 }
-
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriaService {
+export class ProdutoService {
 
-  constructor(private http:HttpClient) { }
-
-  categoriasUrl='http://localhost:8080/categorias';
-
-  pesquisar(filtro: CategoriaFiltro): Promise<any>{
+  constructor(private http: HttpClient) {}
+  produtosUrl='http://localhost:8080/produtos'
+  pesquisar(filtro: ProdutoFiltro): Promise<any>{
     let params = new HttpParams({
     fromObject: {
       page: filtro.pagina.toString(),
@@ -28,13 +25,13 @@ export class CategoriaService {
     if(filtro.nome){
       params =params.append('nome', filtro.nome);
     }
-   return this.http.get<any>(`${this.categoriasUrl}`, {params})
+   return this.http.get<any>(`${this.produtosUrl}`, {params})
      .toPromise()
      .then(response => {
-       const categorias = response.content;
+       const produtos = response.content;
 
        const resultado ={
-         categorias,
+         produtos,
          total: response.totalElements
        }
        return resultado;
