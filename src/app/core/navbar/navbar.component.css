@@ -37,3 +37,6 @@
     color: #ffffff;
 
 }
+.navbar-menuitem.ativo{
+    background-color:#a7e9e0;
+}
