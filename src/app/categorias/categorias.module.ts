@@ -8,12 +8,14 @@ import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
 import { FormsModule } from '@angular/forms';
 import { CategoriasCadastroComponent } from './categorias-cadastro/categorias-cadastro.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [CategoriasPesquisaComponent, CategoriasCadastroComponent],
   exports:[CategoriasPesquisaComponent],
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     InputTextModule,
     ButtonModule,

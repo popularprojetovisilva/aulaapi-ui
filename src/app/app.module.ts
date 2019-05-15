@@ -12,10 +12,14 @@ import { ProdutoService } from './produtos/produto.service';
 import { Routes, RouterModule } from '@angular/router';
 import { ProdutosPesquisaComponent } from './produtos/produtos-pesquisa/produtos-pesquisa.component';
 import { CategoriasPesquisaComponent } from './categorias/categorias-pesquisa/categorias-pesquisa.component';
+import { CategoriasCadastroComponent } from './categorias/categorias-cadastro/categorias-cadastro.component';
+import { ProdutosCadastroComponent } from './produtos/produtos-cadastro/produtos-cadastro.component';
 
 const routes: Routes =[
   {path:'categorias', component:CategoriasPesquisaComponent},
+  {path:'categorias/novo', component:CategoriasCadastroComponent},
   {path:'produtos', component: ProdutosPesquisaComponent},
+  {path:'produtos/novo', component:ProdutosCadastroComponent},
 ]
 
 @NgModule({
